@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Dan Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Dan Blog">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Dan Blog">
+<meta property="og:locale" content="En">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dan Blog">
+  
+    <link rel="alternate" href="/atom.xml" title="Dan Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Dan Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Welcome to Danilo Carrabino&#39;s Blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-CMemento11" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/06/CMemento11/" class="article-date">
+  <time datetime="2017-11-06T00:16:01.000Z" itemprop="datePublished">2017-11-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/06/CMemento11/">CMemento11</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><a href="https://github.com/evildead/CMemento11" target="_blank" rel="external">CMemento11</a></strong> is an application to show the use of <a href="https://en.wikibooks.org/wiki/C%2B%2B_Programming/Code/Design_Patterns#Memento" target="_blank" rel="external">Memento</a> and <a href="https://en.wikibooks.org/wiki/C%2B%2B_Programming/Code/Design_Patterns#Command" target="_blank" rel="external">Command</a> design patterns, to implement a undo/redo listView in Qt/C++/QML.</p>
+<p>The data model is represented by two classes: <code>CUndoableInventory</code> and <code>CListable</code></p>
+<p><em>CUndoableInventory</em> class represents the listView and contains a vector of objects extending CListable interface.<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * @brief The CUndoableInventory class</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CUndoableInventory</span></span></div><div class="line"><span class="class">&#123;</span></div><div class="line"><span class="keyword">protected</span>:</div><div class="line">    <span class="comment">// list of CListable</span></div><div class="line">    <span class="built_in">vector</span>&lt; <span class="built_in">shared_ptr</span>&lt;CListable&gt; &gt; *inventory_;</div><div class="line"></div><div class="line">    <span class="built_in">vector</span>&lt; <span class="built_in">shared_ptr</span>&lt;CListable&gt; &gt; *duplicateInventory() <span class="keyword">const</span>;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">const</span> CUndoableInventory&amp; other)</span></span>;</div><div class="line"></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    CUndoableInventory();</div><div class="line">    CUndoableInventory(<span class="keyword">const</span> CUndoableInventory&amp; other);</div><div class="line">    <span class="keyword">virtual</span> ~CUndoableInventory();</div><div class="line"></div><div class="line">    CUndoableInventory &amp; <span class="keyword">operator</span>= (<span class="keyword">const</span> CUndoableInventory&amp; other);</div><div class="line"></div><div class="line">    <span class="comment">// number of listables in the list</span></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getInventorySize</span><span class="params">()</span> <span class="keyword">const</span></span>;</div><div class="line"></div><div class="line">    <span class="comment">// get the listable at index 'pos' (unchangeable)</span></div><div class="line">    <span class="function"><span class="keyword">const</span> CListable* <span class="title">getListable</span><span class="params">(<span class="keyword">size_t</span> pos)</span> <span class="keyword">const</span></span>;</div><div class="line"></div><div class="line">    <span class="comment">// get the listable at index 'pos' (changeable)</span></div><div class="line">    <span class="function">CListable* <span class="title">getListablePtr</span><span class="params">(<span class="keyword">size_t</span> pos)</span></span>;</div><div class="line"></div><div class="line">    <span class="comment">// command list modifiers</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addListable</span><span class="params">(CListableFactory::<span class="keyword">listable_t</span> listableType, <span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; name)</span></span>;</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">insertListable</span><span class="params">(CListableFactory::<span class="keyword">listable_t</span> listableType, <span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; name, <span class="keyword">size_t</span> pos)</span></span>;</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">removeListable</span><span class="params">(<span class="keyword">size_t</span> pos)</span></span>;</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">clearAll</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="comment">// print to std::out</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">printInventory</span><span class="params">()</span> <span class="keyword">const</span></span>;</div><div class="line"></div><div class="line">    <span class="comment">// memento methods</span></div><div class="line">    <span class="function">CUndoableInventoryMemento* <span class="title">createMemento</span><span class="params">()</span> <span class="keyword">const</span></span>;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">reinstateMemento</span> <span class="params">(CUndoableInventoryMemento* mem)</span></span>;</div><div class="line"></div><div class="line"><span class="keyword">protected</span>:</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addListablePtr</span><span class="params">(<span class="built_in">shared_ptr</span>&lt;CListable&gt; listablePtr)</span></span>;</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">insertListablePtr</span><span class="params">(<span class="built_in">shared_ptr</span>&lt;CListable&gt; listablePtr, <span class="keyword">size_t</span> pos)</span></span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p><em>CListable</em> is a pure virtual class representing an object contained in the listView.<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Abstract class CListable</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CListable</span></span></div><div class="line"><span class="class">&#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="keyword">virtual</span> <span class="built_in">std</span>::<span class="function"><span class="built_in">string</span> <span class="title">getTitle</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</div><div class="line">        <span class="built_in">std</span>::<span class="built_in">string</span> title = getType();</div><div class="line">        title.append(<span class="string">" - "</span>).append(getName());</div><div class="line"></div><div class="line">        <span class="keyword">return</span> title;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">virtual</span> <span class="built_in">std</span>::<span class="built_in">unique_ptr</span>&lt;CListable&gt; clone() <span class="keyword">const</span> = <span class="number">0</span>;</div><div class="line">    <span class="keyword">virtual</span> <span class="built_in">std</span>::<span class="function"><span class="built_in">string</span> <span class="title">getName</span><span class="params">()</span> <span class="keyword">const</span> </span>= <span class="number">0</span>;</div><div class="line">    <span class="keyword">virtual</span> <span class="built_in">std</span>::<span class="function"><span class="built_in">string</span> <span class="title">getType</span><span class="params">()</span> <span class="keyword">const</span> </span>= <span class="number">0</span>;</div><div class="line">    <span class="keyword">virtual</span> <span class="built_in">std</span>::<span class="function"><span class="built_in">string</span> <span class="title">toString</span><span class="params">()</span> <span class="keyword">const</span> </span>= <span class="number">0</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>This design decouples the <em>CListable</em> abstraction from its implementation (in this case: <em>CBook</em>, <em>CCdRom</em>, <em>CDvd</em>), so that the two can vary independently: it complies to the <a href="https://en.wikibooks.org/wiki/C%2B%2B_Programming/Code/Design_Patterns#2._Bridge" target="_blank" rel="external">Bridge</a> Design Pattern.</p>
+<h3 id="Undo-Redo-Command-and-Memento-patterns"><a href="#Undo-Redo-Command-and-Memento-patterns" class="headerlink" title="Undo/Redo: Command and Memento patterns."></a>Undo/Redo: <em>Command</em> and <em>Memento</em> patterns.</h3><p><em>Command</em> pattern is an <em>Object behavioral pattern</em> that decouples sender and receiver by encapsulating a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and above all support undo-able operations.<br>It can also be thought as an object oriented equivalent of <em>call-back</em> method.</p>
+<p>Without violating encapsulation the <em>Memento</em> pattern will capture and externalize an object’s internal state so that the object can be restored to this state later.<br>The <em>Originator</em> (the object to be saved) creates a snap-shot of itself as a <em>Memento</em> object, and passes that reference to the <em>Caretaker</em> object. The <em>Caretaker</em> object keeps the <em>Memento</em> until such a time as the <em>Originator</em> may want to revert to a previous state as recorded in the <em>Memento</em> object.</p>
+<p>In my implementation the <em>originator</em> is represented by <em>CUndoableInventory</em>.<br><em>CUndoableInventory</em> creates a snap-shot of itself as a <em>CUndoableInventoryMemento</em> object by invoking createMemento(), and can revert to a previous state by invoking reinstateMemento <code>(CUndoableInventoryMemento* mem)</code>:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * @brief The CUndoableInventoryMemento class</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CUndoableInventoryMemento</span></span></div><div class="line"><span class="class">&#123;</span></div><div class="line"><span class="keyword">private</span>:</div><div class="line">    CUndoableInventory object_;</div><div class="line"></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    CUndoableInventoryMemento(<span class="keyword">const</span> CUndoableInventory&amp; obj);</div><div class="line"></div><div class="line">    <span class="comment">// want a snapshot of CUndoableInventory itself because of its many data members</span></div><div class="line">    <span class="function">CUndoableInventory <span class="title">snapshot</span><span class="params">()</span> <span class="keyword">const</span></span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>The <em>Caretaker</em> is represented by <em>CUndoableInventoryAction</em> class (<em>Command</em> pattern, where the receiver is <em>CUndoableInventory</em>):<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * @brief The CUndoableInventoryAction class</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CUndoableInventoryAction</span></span></div><div class="line"><span class="class">&#123;</span></div><div class="line"><span class="keyword">private</span>:</div><div class="line">    CUndoableInventory* receiver_;</div><div class="line"></div><div class="line">    <span class="comment">// this std::function will contain the reference to receiver's method and all the parameters</span></div><div class="line">    function&lt;<span class="keyword">void</span>(<span class="keyword">const</span> CUndoableInventory&amp;)&gt; receiverAction_;</div><div class="line"></div><div class="line">    <span class="keyword">static</span> <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;CUndoableInventoryAction*&gt; commandList_;</div><div class="line">    <span class="keyword">static</span> <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;CUndoableInventoryMemento*&gt; mementoList_;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">int</span> numCommands_;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">int</span> maxCommands_;</div><div class="line"></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    CUndoableInventoryAction(CUndoableInventory *newReceiver,</div><div class="line">                             function&lt;<span class="keyword">void</span>(<span class="keyword">const</span> CUndoableInventory&amp;)&gt; newReceiverAction);</div><div class="line">    <span class="keyword">virtual</span> ~CUndoableInventoryAction();</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">isUndoable</span><span class="params">()</span></span>;</div><div class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">isRedoable</span><span class="params">()</span></span>;</div><div class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">undo</span><span class="params">()</span></span>;</div><div class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">redo</span><span class="params">()</span></span>;</div><div class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">clearAll</span><span class="params">()</span></span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// CUNDOABLEINVENTORY_H</span></span></div></pre></td></tr></table></figure></p>
+<p>An instance of this class represents an undoable operation performed on the <em>CUndoableInventory</em> object:<br>it keeps a pointer to an instance of the receiver (<em>CUndoableInventory</em>) and the method to be performed on the receiver as a <code>function&lt;void(const CUndoableInventory&amp;)&gt;</code>  (the <a href="http://en.cppreference.com/w/cpp/utility/functional/function" target="_blank" rel="external">std::function</a> encapsulates both the method of class <em>CUndoableInventory</em> and the parameters to be passed to it).</p>
+<p>Moreover, the <em>CUndoableInventoryAction</em> class is the <em>Caretaker</em>, because it keeps two static lists:</p>
+<ul>
+<li>1) the list of actions performed;</li>
+<li>2) the list of the inner states of the undoable inventory (<em>CUndoableInventoryMemento</em> object).</li>
+</ul>
+<p>The <strong>undo/redo</strong> functions have been implemented as follows:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">void</span> CUndoableInventoryAction::undo()</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(numCommands_ == <span class="number">0</span>) &#123;</div><div class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"There is nothing to undo at this point."</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    commandList_[numCommands_ - <span class="number">1</span>]-&gt;receiver_-&gt;reinstateMemento(mementoList_[numCommands_ - <span class="number">1</span>]);</div><div class="line">    numCommands_--;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">void</span> CUndoableInventoryAction::redo()</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> (numCommands_ &gt; maxCommands_) &#123;</div><div class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"There is nothing to redo at this point."</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    CUndoableInventoryAction* commandRedo = commandList_[numCommands_];</div><div class="line">    commandRedo-&gt;receiverAction_(*(commandRedo-&gt;receiver_));</div><div class="line">    numCommands_++;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="Undoable-Operations"><a href="#Undoable-Operations" class="headerlink" title="Undoable Operations"></a>Undoable Operations</h3><p>The class in charge of performing undoable operations on a <em>CUndoableInventory</em> object, is <em>CUndoableInventoryManager</em>:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CUndoableInventoryManager</span></span></div><div class="line"><span class="class">&#123;</span></div><div class="line"><span class="keyword">protected</span>:</div><div class="line">    CUndoableInventory undoableInventory_;</div><div class="line"></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    CUndoableInventoryManager();</div><div class="line">    <span class="keyword">virtual</span> ~CUndoableInventoryManager();</div><div class="line"></div><div class="line"><span class="keyword">protected</span>:</div><div class="line">    void executeNonUndoableMethod(function&lt;void(const CUndoableInventory&amp;)&gt; method);</div><div class="line">    void executeUndoableMethod(function&lt;void(const CUndoableInventory&amp;)&gt; method);</div><div class="line"></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">const</span> CUndoableInventory&amp; <span class="title">undoableInventory</span><span class="params">()</span> <span class="keyword">const</span></span>;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setUndoableInventory</span><span class="params">(<span class="built_in">unique_ptr</span>&lt;CUndoableInventory&gt; undoableInventory)</span></span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getInventorySize</span><span class="params">()</span> <span class="keyword">const</span></span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">const</span> CListable* <span class="title">getInventoryListable</span><span class="params">(<span class="keyword">size_t</span> pos)</span> <span class="keyword">const</span></span>;</div><div class="line">    <span class="function">CListable* <span class="title">getInventoryListablePtr</span><span class="params">(<span class="keyword">size_t</span> pos)</span></span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isLastInventoryActionUndoable</span><span class="params">()</span></span>;</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isLastInventoryActionRedoable</span><span class="params">()</span></span>;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">undoLastInventoryAction</span><span class="params">()</span></span>;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">redoLastInventoryAction</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">inventoryAddListable</span><span class="params">(CListableFactory::<span class="keyword">listable_t</span> listableType, <span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; name)</span></span>;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">inventoryInsertListable</span><span class="params">(CListableFactory::<span class="keyword">listable_t</span> listableType, <span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; name, <span class="keyword">size_t</span> pos)</span></span>;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">inventoryRemoveListable</span><span class="params">(<span class="keyword">size_t</span> pos)</span></span>;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">inventoryClear</span><span class="params">()</span></span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>The magic happens inside <code>executeUndoableMethod</code><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">void</span> CUndoableInventoryManager::executeUndoableMethod(function&lt;<span class="keyword">void</span>(<span class="keyword">const</span> CUndoableInventory&amp;)&gt; method)</div><div class="line">&#123;</div><div class="line">    CUndoableInventoryAction* myInventoryAction = <span class="keyword">new</span> CUndoableInventoryAction(&amp;undoableInventory_, method);</div><div class="line">    myInventoryAction-&gt;execute();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>which receives a <code>function&lt;void(const CUndoableInventory&amp;)&gt;</code> as parameter, which encapsulates the method of <em>CUndoableInventory</em> to be invoked and the parameters.<br>This method creates an action (<em>Command</em> pattern) by creating an object of type <em>CUndoableInventoryAction</em>, and then invokes its execute method <code>myInventoryAction-&gt;execute();</code>.</p>
+<p>In this way, any function willing to be <em>undoable</em>, will just have to wrap the <em>CUndoableInventory</em> method and the parameters, inside a <em>std::function</em></p>
+<p>For example, let’s have a look at <code>inventoryAddListable(CListableFactory::listable_t listableType, const std::string&amp; name)</code>:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">void</span> CUndoableInventoryManager::inventoryAddListable(CListableFactory::<span class="keyword">listable_t</span> listableType, <span class="keyword">const</span> <span class="built_in">string</span> &amp;name)</div><div class="line">&#123;</div><div class="line">    <span class="built_in">std</span>::function&lt;<span class="keyword">void</span>(<span class="keyword">const</span> CUndoableInventory&amp;)&gt; inventoryMethod = <span class="built_in">std</span>::bind(&amp;CUndoableInventory::addListable, &amp;undoableInventory_, listableType, name);</div><div class="line">    executeUndoableMethod(inventoryMethod);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="C-lt-—–-gt-QML"><a href="#C-lt-—–-gt-QML" class="headerlink" title="C++ &lt;—–&gt; QML"></a>C++ &lt;—–&gt; QML</h3><p>In order to “bind” the <a href="https://github.com/evildead/CMemento11/blob/master/qml/inventoryView.qml" target="_blank" rel="external">QML undoable listView</a> with the data model represented by <em>CUndoableInventoryManager</em> object, I set up a MVC architecture.</p>
+<ul>
+<li>Model: <em>CUndoableInventoryManager</em></li>
+<li>View: <em>QML undoable listView</em></li>
+<li>Controller: an object of type <em>CInventoryModel</em> extending <em>QAbstractListModel</em></li>
+</ul>
+<p>The class <em>CInventoryModel</em> receives commands from <em>Javascript</em> functions used in QML undoable listView, and then it performs modifications on the <em>data model</em> and the <em>listView</em> itself.<br>For example, let’s have a look at the <code>addListable</code> method:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * C++</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">void</span> CInventoryModel::addListable(<span class="keyword">int</span> listableType, <span class="keyword">const</span> QString&amp; name)</div><div class="line">&#123;</div><div class="line">    CListableFactory::<span class="keyword">listable_t</span> listableFactoryType = <span class="keyword">static_cast</span>&lt;CListableFactory::<span class="keyword">listable_t</span>&gt;(listableType);</div><div class="line">    beginInsertRows(QModelIndex(), myInventoryManager_-&gt;getInventorySize(), myInventoryManager_-&gt;getInventorySize());</div><div class="line">    myInventoryManager_-&gt;inventoryAddListable(listableFactoryType, name.toStdString());</div><div class="line">    endInsertRows();</div><div class="line">    <span class="function">emit <span class="title">modelModified</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * QML/Javascript</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">execAddListable</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> listableType = listableTypeComboBox.currentIndex + <span class="number">1</span>;</div><div class="line">	<span class="keyword">var</span> listableName = listableNameTextField.text;</div><div class="line">	inventoryModel.addListable(listableType, listableName);</div><div class="line">	inventoryList.positionViewAtEnd();</div><div class="line">&#125;</div><div class="line"></div><div class="line">...</div><div class="line">    Button &#123;</div><div class="line">        x: <span class="number">10</span></div><div class="line">        y: <span class="number">100</span></div><div class="line">        id: cmdButtonAdd</div><div class="line">        Layout.alignment: Qt.AlignLeft</div><div class="line">        anchors.topMargin: <span class="number">10</span></div><div class="line"></div><div class="line">        text: qsTr(<span class="string">"Add Item"</span>)</div><div class="line"></div><div class="line">        style: ButtonStyle &#123;</div><div class="line">            background: Rectangle &#123;</div><div class="line">                implicitWidth: <span class="number">120</span></div><div class="line">                implicitHeight: <span class="number">40</span></div><div class="line">                opacity: enabled ? <span class="number">1</span> : <span class="number">0.3</span></div><div class="line">                border.color: cmdButtonAdd.down ? selectedColor : normalColor</div><div class="line">                border.width: <span class="number">1</span></div><div class="line">                radius: <span class="number">2</span></div><div class="line">            &#125;</div><div class="line"></div><div class="line">            label: Text &#123;</div><div class="line">                text: cmdButtonAdd.text</div><div class="line">                opacity: enabled ? <span class="number">1.0</span> : <span class="number">0.3</span></div><div class="line">                color: cmdButtonAdd.down ? selectedColor : normalColor</div><div class="line">                horizontalAlignment: Text.AlignHCenter</div><div class="line">                verticalAlignment: Text.AlignVCenter</div><div class="line">                elide: Text.ElideRight</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        action: Action &#123;</div><div class="line">            enabled: <span class="literal">true</span></div><div class="line"></div><div class="line">            onTriggered: &#123;</div><div class="line">                execAddListable();</div><div class="line">                <span class="built_in">console</span>.log(<span class="string">"Add detected!"</span>)</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">...</div></pre></td></tr></table></figure>
+<p>In this way I was able to implement all of the methods to add, insert, delete items on the list, and the undo/redo actions.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/06/CMemento11/" data-id="cj9nfrkdu0002pone5ca9qd22" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-DanJsonp-Class" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/05/DanJsonp-Class/" class="article-date">
+  <time datetime="2017-11-05T18:19:38.000Z" itemprop="datePublished">2017-11-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/05/DanJsonp-Class/">DanJsonp Class</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.w3schools.com/js/js_json_jsonp.asp" target="_blank" rel="external">JSONP</a> is a method for sending JSON data without worrying about cross-domain issues.</p>
+<p>It does not use the XMLHttpRequest object, but the <em>script</em> tag instead.</p>
+<p>Requesting an external script from another domain does not have cross-domain policy problems.</p>
+<p><strong><a href="https://github.com/evildead/vanilla-chuck/blob/master/js/danJsonp.js" target="_blank" rel="external">DanJsonp</a></strong> is a pure Javascript ES6 class which implements JSONP protocol inside a web page.</p>
+<p>It contains a static method which receives two parameters: an uri and a callbackName<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> invokeJsonp(uri, callbackName = <span class="literal">null</span>) &#123;</div></pre></td></tr></table></figure></p>
+<p>So this methods considers two modalities:</p>
+<ol>
+<li>The first one is when an external callback name is provided.</li>
+<li>The second one is when no callback name is provided.</li>
+</ol>
+<p>The method creates a script element first<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> s = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</div></pre></td></tr></table></figure></p>
+<p>Then, if a callback name is provided, it executes:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(callbackName) &#123;</div><div class="line">    finalAddress += separator + <span class="string">"callback="</span> + callbackName;</div><div class="line">    s.src = finalAddress;</div><div class="line"></div><div class="line">    <span class="comment">// append script node to document body</span></div><div class="line">    <span class="built_in">document</span>.body.appendChild(s);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>and does not return anything.</p>
+<p>Else, if a callback name is provided, it executes:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">else</span> &#123;</div><div class="line">    <span class="comment">// create the promise to return</span></div><div class="line">    <span class="keyword">var</span> willPromiseFinish = <span class="keyword">new</span> <span class="built_in">Promise</span>(</div><div class="line">        (resolve, reject) =&gt; &#123;</div><div class="line">            <span class="comment">// assign static method danJsonpCallback to class DanJsonp</span></div><div class="line">            <span class="built_in">Object</span>.assign(DanJsonp, &#123;</div><div class="line">                danJsonpCallback(myObj) &#123;</div><div class="line">                    <span class="comment">// resolve promise after callback invocation</span></div><div class="line">                    <span class="keyword">if</span>(myObj) &#123;</div><div class="line">                        resolve(myObj);</div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">else</span> &#123;</div><div class="line">                        reject(<span class="string">"No value returned by server"</span>);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line">        &#125;</div><div class="line">    );</div><div class="line"></div><div class="line">    finalAddress += separator + <span class="string">"callback=DanJsonp.danJsonpCallback"</span>;</div><div class="line">    s.src = finalAddress;</div><div class="line"></div><div class="line">    <span class="comment">// append script node to document body</span></div><div class="line">    <span class="built_in">document</span>.body.appendChild(s);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> willPromiseFinish;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>The very interesting part here is the creation of a Promise object, which will be returned at method completion.</p>
+<p>A <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="external">Promise</a></strong> object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.</p>
+<p>A function that is passed with the arguments <em>resolve</em> and <em>reject</em> to the Promise contructor is called <em>executor</em>. The executor function is executed immediately by the Promise implementation, passing <em>resolve</em> and <em>reject</em> functions (the executor is called before the Promise constructor even returns the created object). The resolve and reject functions, when called, resolve or reject the promise, respectively.</p>
+<p>In the <em>invokeJsonp</em> method, the executor creates a static method named <em>danJsonpCallback</em> inside <em>DanJsonp</em> class, by using <strong>Object.assign</strong> function.</p>
+<p>This static method (<em>DanJsonp.danJsonpCallback</em>) will be invoked at the end of API execution, and only then it will “resolve” the promise, so to make the JSON data available to client.</p>
+<p>In order to do that, a query parameter <code>finalAddress += separator + &quot;callback=DanJsonp.danJsonpCallback&quot;;</code> is concatenated to the final uri, and the script element is appended to the document body.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>Let’s consider a simple PHP/Apache server, which provides a simple API, and is running on <a href="http://localhost/php-jsonp/getJsonpData.php" target="_blank" rel="external">http://localhost/php-jsonp/getJsonpData.php</a>:<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$phpData = (object) [</div><div class="line">    <span class="string">'lang'</span> =&gt; <span class="string">'php'</span>,</div><div class="line">    <span class="string">'name'</span> =&gt; <span class="string">'phpJsonp'</span>,</div><div class="line">    <span class="string">'payload'</span> =&gt; <span class="string">"Let's test these data coming from the PHP/Apache server"</span></div><div class="line">];</div><div class="line"></div><div class="line">$callbackName = filter_input(INPUT_GET, <span class="string">'callback'</span>, FILTER_SANITIZE_SPECIAL_CHARS);</div><div class="line"></div><div class="line"><span class="comment">// JSONP modality</span></div><div class="line"><span class="keyword">if</span>(($callbackName !== <span class="keyword">false</span>) &amp;&amp; ($callbackName !== <span class="keyword">null</span>)) &#123;</div><div class="line">    <span class="keyword">echo</span>(<span class="string">"/**/ typeof "</span>.$callbackName.<span class="string">" === 'function' &amp;&amp; "</span>.$callbackName.<span class="string">'('</span>.json_encode($phpData).<span class="string">');'</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">// JSON modality</span></div><div class="line"><span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">echo</span>(json_encode($phpData));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>To get the simple JSON object provided by the PHP/Apache server, by using DanJsonp class, the client should simply invoke:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">DanJsonp.invokeJsonp(<span class="string">"http://localhost/php-jsonp/getJsonpData.php"</span>)</div><div class="line">    .then(<span class="function">(<span class="params">myObj</span>) =&gt;</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(myObj);</div><div class="line">    &#125;)</div><div class="line">    .catch(<span class="function">(<span class="params">reason</span>) =&gt;</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Promises catch: '</span> + reason);</div><div class="line">    &#125;);</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/05/DanJsonp-Class/" data-id="cj9n3195x0001pone7vc962o5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/06/CMemento11/">CMemento11</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/05/DanJsonp-Class/">DanJsonp Class</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Danilo Carrabino<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

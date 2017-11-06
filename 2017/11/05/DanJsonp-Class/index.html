@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>DanJsonp Class | Dan Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JSONP is a method for sending JSON data without worrying about cross-domain issues. It does not use the XMLHttpRequest object, but the script tag instead. Requesting an external script from another do">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DanJsonp Class">
+<meta property="og:url" content="http://yoursite.com/2017/11/05/DanJsonp-Class/index.html">
+<meta property="og:site_name" content="Dan Blog">
+<meta property="og:description" content="JSONP is a method for sending JSON data without worrying about cross-domain issues. It does not use the XMLHttpRequest object, but the script tag instead. Requesting an external script from another do">
+<meta property="og:locale" content="En">
+<meta property="og:updated_time" content="2017-11-06T00:12:08.640Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DanJsonp Class">
+<meta name="twitter:description" content="JSONP is a method for sending JSON data without worrying about cross-domain issues. It does not use the XMLHttpRequest object, but the script tag instead. Requesting an external script from another do">
+  
+    <link rel="alternate" href="/atom.xml" title="Dan Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Dan Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Welcome to Danilo Carrabino&#39;s Blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-DanJsonp-Class" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/05/DanJsonp-Class/" class="article-date">
+  <time datetime="2017-11-05T18:19:38.000Z" itemprop="datePublished">2017-11-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      DanJsonp Class
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.w3schools.com/js/js_json_jsonp.asp" target="_blank" rel="external">JSONP</a> is a method for sending JSON data without worrying about cross-domain issues.</p>
+<p>It does not use the XMLHttpRequest object, but the <em>script</em> tag instead.</p>
+<p>Requesting an external script from another domain does not have cross-domain policy problems.</p>
+<p><strong><a href="https://github.com/evildead/vanilla-chuck/blob/master/js/danJsonp.js" target="_blank" rel="external">DanJsonp</a></strong> is a pure Javascript ES6 class which implements JSONP protocol inside a web page.</p>
+<p>It contains a static method which receives two parameters: an uri and a callbackName<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> invokeJsonp(uri, callbackName = <span class="literal">null</span>) &#123;</div></pre></td></tr></table></figure></p>
+<p>So this methods considers two modalities:</p>
+<ol>
+<li>The first one is when an external callback name is provided.</li>
+<li>The second one is when no callback name is provided.</li>
+</ol>
+<p>The method creates a script element first<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> s = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</div></pre></td></tr></table></figure></p>
+<p>Then, if a callback name is provided, it executes:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(callbackName) &#123;</div><div class="line">    finalAddress += separator + <span class="string">"callback="</span> + callbackName;</div><div class="line">    s.src = finalAddress;</div><div class="line"></div><div class="line">    <span class="comment">// append script node to document body</span></div><div class="line">    <span class="built_in">document</span>.body.appendChild(s);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>and does not return anything.</p>
+<p>Else, if a callback name is provided, it executes:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">else</span> &#123;</div><div class="line">    <span class="comment">// create the promise to return</span></div><div class="line">    <span class="keyword">var</span> willPromiseFinish = <span class="keyword">new</span> <span class="built_in">Promise</span>(</div><div class="line">        (resolve, reject) =&gt; &#123;</div><div class="line">            <span class="comment">// assign static method danJsonpCallback to class DanJsonp</span></div><div class="line">            <span class="built_in">Object</span>.assign(DanJsonp, &#123;</div><div class="line">                danJsonpCallback(myObj) &#123;</div><div class="line">                    <span class="comment">// resolve promise after callback invocation</span></div><div class="line">                    <span class="keyword">if</span>(myObj) &#123;</div><div class="line">                        resolve(myObj);</div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">else</span> &#123;</div><div class="line">                        reject(<span class="string">"No value returned by server"</span>);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line">        &#125;</div><div class="line">    );</div><div class="line"></div><div class="line">    finalAddress += separator + <span class="string">"callback=DanJsonp.danJsonpCallback"</span>;</div><div class="line">    s.src = finalAddress;</div><div class="line"></div><div class="line">    <span class="comment">// append script node to document body</span></div><div class="line">    <span class="built_in">document</span>.body.appendChild(s);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> willPromiseFinish;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>The very interesting part here is the creation of a Promise object, which will be returned at method completion.</p>
+<p>A <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="external">Promise</a></strong> object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.</p>
+<p>A function that is passed with the arguments <em>resolve</em> and <em>reject</em> to the Promise contructor is called <em>executor</em>. The executor function is executed immediately by the Promise implementation, passing <em>resolve</em> and <em>reject</em> functions (the executor is called before the Promise constructor even returns the created object). The resolve and reject functions, when called, resolve or reject the promise, respectively.</p>
+<p>In the <em>invokeJsonp</em> method, the executor creates a static method named <em>danJsonpCallback</em> inside <em>DanJsonp</em> class, by using <strong>Object.assign</strong> function.</p>
+<p>This static method (<em>DanJsonp.danJsonpCallback</em>) will be invoked at the end of API execution, and only then it will “resolve” the promise, so to make the JSON data available to client.</p>
+<p>In order to do that, a query parameter <code>finalAddress += separator + &quot;callback=DanJsonp.danJsonpCallback&quot;;</code> is concatenated to the final uri, and the script element is appended to the document body.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>Let’s consider a simple PHP/Apache server, which provides a simple API, and is running on <a href="http://localhost/php-jsonp/getJsonpData.php" target="_blank" rel="external">http://localhost/php-jsonp/getJsonpData.php</a>:<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$phpData = (object) [</div><div class="line">    <span class="string">'lang'</span> =&gt; <span class="string">'php'</span>,</div><div class="line">    <span class="string">'name'</span> =&gt; <span class="string">'phpJsonp'</span>,</div><div class="line">    <span class="string">'payload'</span> =&gt; <span class="string">"Let's test these data coming from the PHP/Apache server"</span></div><div class="line">];</div><div class="line"></div><div class="line">$callbackName = filter_input(INPUT_GET, <span class="string">'callback'</span>, FILTER_SANITIZE_SPECIAL_CHARS);</div><div class="line"></div><div class="line"><span class="comment">// JSONP modality</span></div><div class="line"><span class="keyword">if</span>(($callbackName !== <span class="keyword">false</span>) &amp;&amp; ($callbackName !== <span class="keyword">null</span>)) &#123;</div><div class="line">    <span class="keyword">echo</span>(<span class="string">"/**/ typeof "</span>.$callbackName.<span class="string">" === 'function' &amp;&amp; "</span>.$callbackName.<span class="string">'('</span>.json_encode($phpData).<span class="string">');'</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">// JSON modality</span></div><div class="line"><span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">echo</span>(json_encode($phpData));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>To get the simple JSON object provided by the PHP/Apache server, by using DanJsonp class, the client should simply invoke:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">DanJsonp.invokeJsonp(<span class="string">"http://localhost/php-jsonp/getJsonpData.php"</span>)</div><div class="line">    .then(<span class="function">(<span class="params">myObj</span>) =&gt;</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(myObj);</div><div class="line">    &#125;)</div><div class="line">    .catch(<span class="function">(<span class="params">reason</span>) =&gt;</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Promises catch: '</span> + reason);</div><div class="line">    &#125;);</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/05/DanJsonp-Class/" data-id="cj9n3195x0001pone7vc962o5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/11/06/CMemento11/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CMemento11
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/06/CMemento11/">CMemento11</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/05/DanJsonp-Class/">DanJsonp Class</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Danilo Carrabino<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
