@@ -356,11 +356,16 @@ body {
 }
 #header-title {
   text-align: center;
-  height: 40px;
+  height: 100px;
   position: absolute;
   top: 50%;
   left: 0;
-  margin-top: -20px;
+  margin-top: -50px;
+  background: url("images/danBlog-logo01.svg") no-repeat center rgba(55,180,127,0.1);
+  -webkit-background-size: 230px;
+  -moz-background-size: 230px;
+  background-size: 230px;
+  border-radius: 15px;
 }
 #logo,
 #subtitle {
@@ -370,17 +375,18 @@ body {
   text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 #logo {
-  font-size: 40px;
-  line-height: 40px;
+  font-size: 100px;
+  line-height: 100px;
   letter-spacing: 2px;
+  color: rgba(255,255,255,0);
 }
 #subtitle {
   font-size: 16px;
   line-height: 16px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 #subtitle-wrap {
-  margin-top: 16px;
+  margin-top: -3px;
 }
 #main-nav {
   float: left;
