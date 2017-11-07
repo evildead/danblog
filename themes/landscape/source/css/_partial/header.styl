@@ -40,10 +40,13 @@
   top: 50%
   left: 0
   margin-top: logo-size * -0.5
+  background: url(danblog-logo-url) no-repeat center rgba(55, 180, 127, 0.1)
+  background-size: logo-background-size
+  border-radius: 15px
 
 $logo-text
   text-decoration: none
-  color: #fff
+  color: rgba(255, 255, 255, 1)
   font-weight: 300
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3)
 
@@ -52,15 +55,16 @@ $logo-text
   font-size: logo-size
   line-height: logo-size
   letter-spacing: 2px
+  color: rgba(255, 255, 255, 0.0)
 
 #subtitle
   @extend $logo-text
   font-size: subtitle-size
   line-height: subtitle-size
-  letter-spacing: 1px
+  letter-spacing: 2px
 
 #subtitle-wrap
-  margin-top: subtitle-size
+  margin-top: -3px
 
 #main-nav
   float: left
