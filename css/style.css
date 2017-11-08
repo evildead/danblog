@@ -194,12 +194,13 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #999;
+  color: #09560d;
   margin-bottom: 1em;
   margin-left: 5px;
   line-height: 1em;
   text-shadow: 0 1px #fff;
   font-weight: bold;
+  font-size: 15px;
 }
 .article-inner,
 .archive-article-inner {
@@ -232,7 +233,7 @@ body {
 .article-entry h6,
 .widget h6 {
   font-size: 1em;
-  color: #999;
+  color: #09560d;
 }
 .article-entry hr,
 .widget hr {
@@ -1081,7 +1082,7 @@ a.article-title:hover {
   color: #ddd;
 }
 #footer {
-  background: #262a30;
+  background: url("images/banner.jpg") center #000;
   padding: 50px 0;
   border-top: 1px solid #ddd;
   color: #999;
@@ -1307,7 +1308,7 @@ pre .javascript .function {
 .widget {
   color: #777;
   text-shadow: 0 1px #fff;
-  background: #ddd;
+  background: rgba(36,122,0,0.1);
   -webkit-box-shadow: 0 -1px 4px #ccc inset;
   box-shadow: 0 -1px 4px #ccc inset;
   border: 1px solid #ccc;
