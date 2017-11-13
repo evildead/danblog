@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Dan Blog</title>
+  
+  <subtitle>Welcome to Danilo Carrabino&#39;s Blog</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://danblog.danilocarrabino.net/"/>
+  <updated>2017-11-13T17:15:42.197Z</updated>
+  <id>http://danblog.danilocarrabino.net/</id>
+  
+  <author>
+    <name>Danilo Carrabino</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Node.js Passport and Terms of Use: sign in to MyPortfolio</title>
+    <link href="http://danblog.danilocarrabino.net/2017/11/08/Node-js-Passport-and-Terms-of-Use-sign-in-to-MyPortfolio/"/>
+    <id>http://danblog.danilocarrabino.net/2017/11/08/Node-js-Passport-and-Terms-of-Use-sign-in-to-MyPortfolio/</id>
+    <published>2017-11-08T16:49:20.000Z</published>
+    <updated>2017-11-13T17:15:42.197Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;In my application named &lt;a href=&quot;http://myportfolio.danilocarrabino.net&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MyPortfolio&lt;/a&gt; (built with
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CMemento11</title>
+    <link href="http://danblog.danilocarrabino.net/2017/11/06/CMemento11/"/>
+    <id>http://danblog.danilocarrabino.net/2017/11/06/CMemento11/</id>
+    <published>2017-11-06T00:16:01.000Z</published>
+    <updated>2017-11-06T00:17:49.813Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/evildead/CMemento11&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CMemento11&lt;/a&gt;&lt;/strong&gt; is an application to
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>DanJsonp Class</title>
+    <link href="http://danblog.danilocarrabino.net/2017/11/05/DanJsonp-Class/"/>
+    <id>http://danblog.danilocarrabino.net/2017/11/05/DanJsonp-Class/</id>
+    <published>2017-11-05T18:19:38.000Z</published>
+    <updated>2017-11-06T00:12:08.640Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://www.w3schools.com/js/js_json_jsonp.asp&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;JSONP&lt;/a&gt; is a method for sending JSON data
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
