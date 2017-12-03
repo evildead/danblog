@@ -56,7 +56,7 @@ Following these rules, every Hindu-Arabic number between 1 and 3999 (MMMCMXCIX) 
 
 ## Requirements
 
-The Roman Number Library to build will have to take a value in input (a Roman Number, or an Hindu-Arabic number), and will have to return an object containing two methods:
+The Roman Number Library to build will have to take a value in input (a Roman Number or an Hindu-Arabic number), and will have to return an object containing two methods:
 * toInt()
 * toString()
 
@@ -65,9 +65,9 @@ The Roman Number Library to build will have to take a value in input (a Roman Nu
 let romanNumber1 = new RomanNumber('MMMCMXCIX');
 let romanNumber2 = new RomanNumber(1);
 
-console.log(romanNumber1.toInt()); // => 3999
+console.log(romanNumber1.toInt());    // => 3999
 console.log(romanNumber1.toString()); // => 'MMMCMXCIX'
-console.log(romanNumber2.toInt()); // => 1
+console.log(romanNumber2.toInt());    // => 1
 console.log(romanNumber2.toString()); // => 'I'
 ```
 
@@ -80,3 +80,80 @@ Error('value required');' ).
 ## Kick-off
 
 Let's kick our application off!
+
+Create the folder RomanNumber:
+`$ mkdir RomanNumber`
+`$ cd RomanNumber`
+
+Initialize the application:
+`$ npm init`
+
+Add Mocha framework:
+`$ npm install --save-dev mocha`
+
+Add Chai:
+`$ npm install --save-dev chai`
+
+Create the empty file RomanNumber.js
+
+Create the folder test:
+`$ mkdir test`
+`$ cd test`
+
+## Create and launch the first test
+
+Under the test folder, create the file testRomanNumber.js with the following code:
+```js
+//Require the dev-dependencies
+let chai = require('chai');
+let should = chai.should();
+let expect = chai.expect;
+let assert = chai.assert;
+
+const RomanNumber = require('../RomanNumber');
+
+describe('RomanNumber', () => {
+
+    describe('Check exceptions', () => {
+        it('The constructor should return an object', () => {
+            let romanNumber = new RomanNumber(1);
+            assert.isObject(romanNumber);
+        });
+    });
+
+});
+```
+
+In this piece of code we include Chai with its three interfaces (_should_, _expect_, _assert_).
+
+Then we include RomanNumber.js (which is still empty).
+
+"_describe_" is used merely for grouping test cases, which you can nest as deep.
+
+"_it_" is a test case: here the very first test case is about invoking the library's constructor `let romanNumber = new RomanNumber(1)` and check that it returns an object `assert.isObject(romanNumber)`.
+
+To launch the test, just type:
+`$ npm test`
+
+![First test: error](/content/images/2017/12/03/00-FirstTest_Error.png)
+
+We have an error stating that RomanNumber is not a constructor: this was the expected error hence our library code is still empty.
+
+## Init Library
+
+In order to pass the test, let's add this simple piece of code to out Roman Number library (RomanNumber.js):
+```js
+const romanNumber = function RomanNumber(val) {
+};
+
+module.exports = romanNumber;
+```
+
+Now, let's run the test again:
+`$ npm test`
+
+![First test: passed](/content/images/2017/12/03/01-FirstTest_No-Error.png)
+
+## More to come
+
+In Pt.2 we will add more tests based on the requirements we defined, and the code to pass those tests.
