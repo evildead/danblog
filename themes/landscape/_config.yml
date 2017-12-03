@@ -27,6 +27,10 @@ index_widgets:
 archive_type: 'monthly'
 show_count: false
 
+search:
+  path: search.xml
+  field: post
+
 # Miscellaneous
 google_analytics:
 favicon: /favicon.png
