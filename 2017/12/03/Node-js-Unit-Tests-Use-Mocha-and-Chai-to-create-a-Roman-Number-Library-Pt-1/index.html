@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Node.js Unit Tests - Use Mocha and Chai to create a Roman Number Library Pt.1 | Dan Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Test-Driven Development is a software development process that relies on the repetition of a very short development cycle: Requirements are turned into very spe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js Unit Tests - Use Mocha and Chai to create a Roman Number Library Pt.1">
+<meta property="og:url" content="http://danblog.danilocarrabino.net/2017/12/03/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1/index.html">
+<meta property="og:site_name" content="Dan Blog">
+<meta property="og:description" content="Test-Driven Development is a software development process that relies on the repetition of a very short development cycle: Requirements are turned into very specific test cases, then the software is i">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://danblog.danilocarrabino.net/content/images/2017/12/03/00-FirstTest_Error.png">
+<meta property="og:image" content="http://danblog.danilocarrabino.net/content/images/2017/12/03/01-FirstTest_No-Error.png">
+<meta property="og:updated_time" content="2017-12-03T23:44:10.792Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Node.js Unit Tests - Use Mocha and Chai to create a Roman Number Library Pt.1">
+<meta name="twitter:description" content="Test-Driven Development is a software development process that relies on the repetition of a very short development cycle: Requirements are turned into very specific test cases, then the software is i">
+<meta name="twitter:image" content="http://danblog.danilocarrabino.net/content/images/2017/12/03/00-FirstTest_Error.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Dan Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Dan Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Welcome to Danilo Carrabino&#39;s Blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://danblog.danilocarrabino.net"></form>
+        <!--
+        <div id="site_search" class="search_form">
+          <input type="text" id="local-search-input" class="search-form-input" name="q" results="0" placeholder="Search" autofocus="autofocus"/>
+          <div id="local-search-result"></div>
+        </div>
+        -->
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/03/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1/" class="article-date">
+  <time datetime="2017-12-03T12:47:56.000Z" itemprop="datePublished">2017-12-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Node.js Unit Tests - Use Mocha and Chai to create a Roman Number Library Pt.1
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank" rel="noopener">Test-Driven Development</a> is a software development process that relies on the repetition of a very short development cycle: Requirements are turned into very specific test cases, then the software is improved to pass the new tests.</p>
+<ol>
+<li>Add a test</li>
+<li>Run all tests and see if the new test fails</li>
+<li>Write the code</li>
+<li>Run tests</li>
+<li>Refactor code</li>
+<li>Repeat</li>
+</ol>
+<p>Thereby the cornerstone of this process is represented by the <a href="https://en.wikipedia.org/wiki/Unit_testing" target="_blank" rel="noopener">Unit Test</a>.</p>
+<h2 id="Mocha-and-Chai"><a href="#Mocha-and-Chai" class="headerlink" title="Mocha and Chai"></a>Mocha and Chai</h2><ul>
+<li>In Node.js a wide used test framework is <a href="https://mochajs.org/" target="_blank" rel="noopener">Mocha</a>: it makes synchronous and asynchronous testing simple and straightforward, allowing for flexible and accurate reporting, while mapping uncaught exceptions to the correct test cases.</li>
+<li>The assertion library we will use is <a href="http://chaijs.com/" target="_blank" rel="noopener">Chai</a>: it has several interfaces that allow the developer to choose the most comfortable (<em>should</em>, <em>expect</em>, <em>assert</em>).</li>
+</ul>
+<h2 id="Roman-Numbers"><a href="#Roman-Numbers" class="headerlink" title="Roman Numbers"></a>Roman Numbers</h2><p>A <a href="https://www.math.nmsu.edu/~pmorandi/math111f01/RomanNumerals.html" target="_blank" rel="noopener">Roman number</a> represents an integer (Hindu-Arabic numerals) using a small set of symbols:</p>
+<table>
+<thead>
+<tr>
+<th>Roman Numeral</th>
+<th>Hindu-Arabic Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I</td>
+<td>1</td>
+</tr>
+<tr>
+<td>V</td>
+<td>5</td>
+</tr>
+<tr>
+<td>X</td>
+<td>10</td>
+</tr>
+<tr>
+<td>L</td>
+<td>50</td>
+</tr>
+<tr>
+<td>C</td>
+<td>100</td>
+</tr>
+<tr>
+<td>D</td>
+<td>500</td>
+</tr>
+<tr>
+<td>M</td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
+<p>There are a few rules for writing numbers with Roman numerals.</p>
+<ul>
+<li>Repeating a numeral up to three times represents addition of the number. For example, III represents 1 + 1 + 1 = 3. Only I, X, C, and M can be repeated; V, L, and D cannot be, and there is no need to do so.</li>
+<li>Writing numerals that decrease from left to right represents addition of the numbers. For example, LX represents 50 + 10 = 60 and XVI represents 10 + 5 + 1 = 16.</li>
+<li>To write a number that otherwise would take repeating of a numeral four or more times, there is a subtraction rule. Writing a smaller numeral to the left of a larger numeral represents subtraction. For example, IV represents 5 - 1 = 4 and IX represents 10 - 1 = 9. To avoid ambiguity, the only pairs of numerals that use this subtraction rule are:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Roman Numeral</th>
+<th>Hindu-Arabic Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IV</td>
+<td>4 = 5 - 1</td>
+</tr>
+<tr>
+<td>IX</td>
+<td>9 = 10 - 1</td>
+</tr>
+<tr>
+<td>XL</td>
+<td>40 = 50 - 10</td>
+</tr>
+<tr>
+<td>XC</td>
+<td>90 = 100 - 10</td>
+</tr>
+<tr>
+<td>CD</td>
+<td>400 = 500 - 100</td>
+</tr>
+<tr>
+<td>CM</td>
+<td>900 = 1000 - 100</td>
+</tr>
+</tbody>
+</table>
+<p>Following these rules, every Hindu-Arabic number between 1 and 3999 (MMMCMXCIX) can be represented as a Roman numeral.</p>
+<h2 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h2><p>The Roman Number Library to build will have to take a value in input (a Roman Number or an Hindu-Arabic number), and will have to return an object containing two methods:</p>
+<ul>
+<li>toInt()</li>
+<li>toString()</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Example</span></div><div class="line"><span class="keyword">let</span> romanNumber1 = <span class="keyword">new</span> RomanNumber(<span class="string">'MMMCMXCIX'</span>);</div><div class="line"><span class="keyword">let</span> romanNumber2 = <span class="keyword">new</span> RomanNumber(<span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(romanNumber1.toInt());    <span class="comment">// =&gt; 3999</span></div><div class="line"><span class="built_in">console</span>.log(romanNumber1.toString()); <span class="comment">// =&gt; 'MMMCMXCIX'</span></div><div class="line"><span class="built_in">console</span>.log(romanNumber2.toInt());    <span class="comment">// =&gt; 1</span></div><div class="line"><span class="built_in">console</span>.log(romanNumber2.toString()); <span class="comment">// =&gt; 'I'</span></div></pre></td></tr></table></figure>
+<ul>
+<li>If the value passed is null or empty, it should throw a ‘value required’ exception error (e.g. ‘throw new<br>Error(‘value required’);’ ).</li>
+<li>If the value passed is outside of 1 to 3999, it should throw an ‘invalid range’ exception error.</li>
+<li>If the value passed is invalid, it should throw an ‘invalid value’ exception error.</li>
+<li>If the library is called as a function (i.e. without the new prefix), it must still pass back a new object.</li>
+</ul>
+<h2 id="Kick-off"><a href="#Kick-off" class="headerlink" title="Kick-off"></a>Kick-off</h2><p>Let’s kick our application off!</p>
+<p>Create the folder RomanNumber:<br><code>$ mkdir RomanNumber</code><br><code>$ cd RomanNumber</code></p>
+<p>Initialize the application:<br><code>$ npm init</code></p>
+<p>Add Mocha framework:<br><code>$ npm install --save-dev mocha</code></p>
+<p>Add Chai:<br><code>$ npm install --save-dev chai</code></p>
+<p>Create the empty file RomanNumber.js</p>
+<p>Create the folder test:<br><code>$ mkdir test</code><br><code>$ cd test</code></p>
+<h2 id="Create-and-launch-the-first-test"><a href="#Create-and-launch-the-first-test" class="headerlink" title="Create and launch the first test"></a>Create and launch the first test</h2><p>Under the test folder, create the file testRomanNumber.js with the following code:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Require the dev-dependencies</span></div><div class="line"><span class="keyword">let</span> chai = <span class="built_in">require</span>(<span class="string">'chai'</span>);</div><div class="line"><span class="keyword">let</span> should = chai.should();</div><div class="line"><span class="keyword">let</span> expect = chai.expect;</div><div class="line"><span class="keyword">let</span> assert = chai.assert;</div><div class="line"></div><div class="line"><span class="keyword">const</span> RomanNumber = <span class="built_in">require</span>(<span class="string">'../RomanNumber'</span>);</div><div class="line"></div><div class="line">describe(<span class="string">'RomanNumber'</span>, () =&gt; &#123;</div><div class="line"></div><div class="line">    describe(<span class="string">'Check exceptions'</span>, () =&gt; &#123;</div><div class="line">        it(<span class="string">'The constructor should return an object'</span>, () =&gt; &#123;</div><div class="line">            <span class="keyword">let</span> romanNumber = <span class="keyword">new</span> RomanNumber(<span class="number">1</span>);</div><div class="line">            assert.isObject(romanNumber);</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>In this piece of code we include Chai with its three interfaces (<em>should</em>, <em>expect</em>, <em>assert</em>).</p>
+<p>Then we include RomanNumber.js (which is still empty).</p>
+<p>“<em>describe</em>“ is used merely for grouping test cases, which you can nest as deep.</p>
+<p>“<em>it</em>“ is a test case: here the very first test case is about invoking the library’s constructor <code>let romanNumber = new RomanNumber(1)</code> and check that it returns an object <code>assert.isObject(romanNumber)</code>.</p>
+<p>To launch the test, just type:<br><code>$ npm test</code></p>
+<p><img src="/content/images/2017/12/03/00-FirstTest_Error.png" alt="First test: error"></p>
+<p>We have an error stating that RomanNumber is not a constructor: this was the expected error hence our library code is still empty.</p>
+<h2 id="Init-Library"><a href="#Init-Library" class="headerlink" title="Init Library"></a>Init Library</h2><p>In order to pass the test, let’s add this simple piece of code to out Roman Number library (RomanNumber.js):<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> romanNumber = <span class="function"><span class="keyword">function</span> <span class="title">RomanNumber</span>(<span class="params">val</span>) </span>&#123;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = romanNumber;</div></pre></td></tr></table></figure></p>
+<p>Now, let’s run the test again:<br><code>$ npm test</code></p>
+<p><img src="/content/images/2017/12/03/01-FirstTest_No-Error.png" alt="First test: passed"></p>
+<h2 id="More-to-come"><a href="#More-to-come" class="headerlink" title="More to come"></a>More to come</h2><p>In Pt.2 we will add more tests based on the requirements we defined, and the code to pass those tests.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://danblog.danilocarrabino.net/2017/12/03/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1/" data-id="cjarf1n0i0000nwnewtk8amh5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/11/08/Node-js-Passport-and-Terms-of-Use-sign-in-to-MyPortfolio/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Node.js Passport and Terms of Use: sign in to MyPortfolio</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/12/03/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1/">Node.js Unit Tests - Use Mocha and Chai to create a Roman Number Library Pt.1</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/08/Node-js-Passport-and-Terms-of-Use-sign-in-to-MyPortfolio/">Node.js Passport and Terms of Use: sign in to MyPortfolio</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/06/CMemento11/">CMemento11</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/05/DanJsonp-Class/">DanJsonp Class</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Danilo Carrabino<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">      
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+        search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

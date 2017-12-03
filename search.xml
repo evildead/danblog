@@ -1,103 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
   
-  <title>Dan Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Danilo Carrabino&apos;s Technical Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dan Blog">
-<meta property="og:url" content="http://danblog.danilocarrabino.net/index.html">
-<meta property="og:site_name" content="Dan Blog">
-<meta property="og:description" content="Danilo Carrabino&apos;s Technical Blog">
-<meta property="og:locale" content="default">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dan Blog">
-<meta name="twitter:description" content="Danilo Carrabino&apos;s Technical Blog">
-  
-    <link rel="alternate" href="/atom.xml" title="Dan Blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-
-</head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Dan Blog</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">Welcome to Danilo Carrabino&#39;s Blog</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://danblog.danilocarrabino.net"></form>
-        <!--
-        <div id="site_search" class="search_form">
-          <input type="text" id="local-search-input" class="search-form-input" name="q" results="0" placeholder="Search" autofocus="autofocus"/>
-          <div id="local-search-result"></div>
-        </div>
-        -->
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/03/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1/" class="article-date">
-  <time datetime="2017-12-03T12:47:56.000Z" itemprop="datePublished">2017-12-03</time>
-</a>
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/03/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1/">Node.js Unit Tests - Use Mocha and Chai to create a Roman Number Library Pt.1</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank" rel="noopener">Test-Driven Development</a> is a software development process that relies on the repetition of a very short development cycle: Requirements are turned into very specific test cases, then the software is improved to pass the new tests.</p>
+    <entry>
+      <title><![CDATA[Node.js Unit Tests - Use Mocha and Chai to create a Roman Number Library Pt.1]]></title>
+      <url>/2017/12/03/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1/</url>
+      <content type="html"><![CDATA[<p><a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank" rel="noopener">Test-Driven Development</a> is a software development process that relies on the repetition of a very short development cycle: Requirements are turned into very specific test cases, then the software is improved to pass the new tests.</p>
 <ol>
 <li>Add a test</li>
 <li>Run all tests and see if the new test fails</li>
@@ -222,43 +130,15 @@
 <p>Now, let’s run the test again:<br><code>$ npm test</code></p>
 <p><img src="/content/images/2017/12/03/01-FirstTest_No-Error.png" alt="First test: passed"></p>
 <h2 id="More-to-come"><a href="#More-to-come" class="headerlink" title="More to come"></a>More to come</h2><p>In Pt.2 we will add more tests based on the requirements we defined, and the code to pass those tests.</p>
-
+]]></content>
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://danblog.danilocarrabino.net/2017/12/03/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1/" data-id="cjarf1n0i0000nwnewtk8amh5" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Node-js-Passport-and-Terms-of-Use-sign-in-to-MyPortfolio" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/08/Node-js-Passport-and-Terms-of-Use-sign-in-to-MyPortfolio/" class="article-date">
-  <time datetime="2017-11-08T16:49:20.000Z" itemprop="datePublished">2017-11-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/08/Node-js-Passport-and-Terms-of-Use-sign-in-to-MyPortfolio/">Node.js Passport and Terms of Use: sign in to MyPortfolio</a>
-    </h1>
-  
-
-      </header>
+    </entry>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>In my application named <a href="http://myportfolio.danilocarrabino.net" target="_blank" rel="noopener">MyPortfolio</a> (built with Node.js/Express and MongoDB), I decided to use <a href="http://www.passportjs.org/" target="_blank" rel="noopener">Passport</a> as authentication middleware.</p>
+    <entry>
+      <title><![CDATA[Node.js Passport and Terms of Use: sign in to MyPortfolio]]></title>
+      <url>/2017/11/08/Node-js-Passport-and-Terms-of-Use-sign-in-to-MyPortfolio/</url>
+      <content type="html"><![CDATA[<p>In my application named <a href="http://myportfolio.danilocarrabino.net" target="_blank" rel="noopener">MyPortfolio</a> (built with Node.js/Express and MongoDB), I decided to use <a href="http://www.passportjs.org/" target="_blank" rel="noopener">Passport</a> as authentication middleware.</p>
 <p>It is extremely flexible and modular, and it comes with a comprehensive set of strategies which support authentication using a <em>username and password</em>, <em>Google-OAuth</em>, <em>Facebook</em>, <em>Twitter</em>, and more.</p>
 <p>I started developing a Passport authentication, by following a very interesting tutorial of <a href="https://scotch.io/tutorials/easy-node-authentication-setup-and-local" target="_blank" rel="noopener">Scotch.io</a>, where it is clearly illustrated how to use <em>Passport</em> to perform local authentication, <em>Facebook</em>, <em>Twitter</em>, <em>Google</em> authentications, and even how to link all social accounts under one user account.</p>
 <p>But there was something lacking in that tutorial, and many other <em>Passport</em> tutorials I found on the web: how could I use <em>Passport</em> middleware to perform a sign-up only after user viewed and accepted my application’s Terms of Use?</p>
@@ -293,43 +173,15 @@
 <p>The route ‘/auth/google’ uses passport authentication method (which was previously configured with the Google Oauth2 Strategy) to authenticate the user with his Google account.</p>
 <p>The magic happens for the route ‘/auth/google/callback’, which represents the callback invoked after the Google authentication procedure. I used a ‘failureRedirect’ to the home page when the authentication fails, and a <em>Custom function</em> on correct Google authentication.</p>
 <p>Thanks to this custom function I can determine whether the Terms of Use haven’t been previously accepted, and in that case redirect the user to the Terms of Use page: from there the user will have the chance to read and accept the Terms and complete the sign-in process.</p>
-
+]]></content>
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://danblog.danilocarrabino.net/2017/11/08/Node-js-Passport-and-Terms-of-Use-sign-in-to-MyPortfolio/" data-id="cjarf1n0v0003nwnelqcenxvk" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CMemento11" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/06/CMemento11/" class="article-date">
-  <time datetime="2017-11-06T00:16:01.000Z" itemprop="datePublished">2017-11-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/06/CMemento11/">CMemento11</a>
-    </h1>
-  
-
-      </header>
+    </entry>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong><a href="https://github.com/evildead/CMemento11" target="_blank" rel="noopener">CMemento11</a></strong> is an application to show the use of <a href="https://en.wikibooks.org/wiki/C%2B%2B_Programming/Code/Design_Patterns#Memento" target="_blank" rel="noopener">Memento</a> and <a href="https://en.wikibooks.org/wiki/C%2B%2B_Programming/Code/Design_Patterns#Command" target="_blank" rel="noopener">Command</a> design patterns, to implement a undo/redo listView in Qt/C++/QML.</p>
+    <entry>
+      <title><![CDATA[CMemento11]]></title>
+      <url>/2017/11/06/CMemento11/</url>
+      <content type="html"><![CDATA[<p><strong><a href="https://github.com/evildead/CMemento11" target="_blank" rel="noopener">CMemento11</a></strong> is an application to show the use of <a href="https://en.wikibooks.org/wiki/C%2B%2B_Programming/Code/Design_Patterns#Memento" target="_blank" rel="noopener">Memento</a> and <a href="https://en.wikibooks.org/wiki/C%2B%2B_Programming/Code/Design_Patterns#Command" target="_blank" rel="noopener">Command</a> design patterns, to implement a undo/redo listView in Qt/C++/QML.</p>
 <p>The data model is represented by two classes: <code>CUndoableInventory</code> and <code>CListable</code></p>
 <p><em>CUndoableInventory</em> class represents the listView and contains a vector of objects extending CListable interface.<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * @brief The CUndoableInventory class</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CUndoableInventory</span></span></div><div class="line"><span class="class">&#123;</span></div><div class="line"><span class="keyword">protected</span>:</div><div class="line">    <span class="comment">// list of CListable</span></div><div class="line">    <span class="built_in">vector</span>&lt; <span class="built_in">shared_ptr</span>&lt;CListable&gt; &gt; *inventory_;</div><div class="line"></div><div class="line">    <span class="built_in">vector</span>&lt; <span class="built_in">shared_ptr</span>&lt;CListable&gt; &gt; *duplicateInventory() <span class="keyword">const</span>;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">const</span> CUndoableInventory&amp; other)</span></span>;</div><div class="line"></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    CUndoableInventory();</div><div class="line">    CUndoableInventory(<span class="keyword">const</span> CUndoableInventory&amp; other);</div><div class="line">    <span class="keyword">virtual</span> ~CUndoableInventory();</div><div class="line"></div><div class="line">    CUndoableInventory &amp; <span class="keyword">operator</span>= (<span class="keyword">const</span> CUndoableInventory&amp; other);</div><div class="line"></div><div class="line">    <span class="comment">// number of listables in the list</span></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getInventorySize</span><span class="params">()</span> <span class="keyword">const</span></span>;</div><div class="line"></div><div class="line">    <span class="comment">// get the listable at index 'pos' (unchangeable)</span></div><div class="line">    <span class="function"><span class="keyword">const</span> CListable* <span class="title">getListable</span><span class="params">(<span class="keyword">size_t</span> pos)</span> <span class="keyword">const</span></span>;</div><div class="line"></div><div class="line">    <span class="comment">// get the listable at index 'pos' (changeable)</span></div><div class="line">    <span class="function">CListable* <span class="title">getListablePtr</span><span class="params">(<span class="keyword">size_t</span> pos)</span></span>;</div><div class="line"></div><div class="line">    <span class="comment">// command list modifiers</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addListable</span><span class="params">(CListableFactory::<span class="keyword">listable_t</span> listableType, <span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; name)</span></span>;</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">insertListable</span><span class="params">(CListableFactory::<span class="keyword">listable_t</span> listableType, <span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; name, <span class="keyword">size_t</span> pos)</span></span>;</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">removeListable</span><span class="params">(<span class="keyword">size_t</span> pos)</span></span>;</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">clearAll</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="comment">// print to std::out</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">printInventory</span><span class="params">()</span> <span class="keyword">const</span></span>;</div><div class="line"></div><div class="line">    <span class="comment">// memento methods</span></div><div class="line">    <span class="function">CUndoableInventoryMemento* <span class="title">createMemento</span><span class="params">()</span> <span class="keyword">const</span></span>;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">reinstateMemento</span> <span class="params">(CUndoableInventoryMemento* mem)</span></span>;</div><div class="line"></div><div class="line"><span class="keyword">protected</span>:</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addListablePtr</span><span class="params">(<span class="built_in">shared_ptr</span>&lt;CListable&gt; listablePtr)</span></span>;</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">insertListablePtr</span><span class="params">(<span class="built_in">shared_ptr</span>&lt;CListable&gt; listablePtr, <span class="keyword">size_t</span> pos)</span></span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 <p><em>CListable</em> is a pure virtual class representing an object contained in the listView.<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Abstract class CListable</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CListable</span></span></div><div class="line"><span class="class">&#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="keyword">virtual</span> <span class="built_in">std</span>::<span class="function"><span class="built_in">string</span> <span class="title">getTitle</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</div><div class="line">        <span class="built_in">std</span>::<span class="built_in">string</span> title = getType();</div><div class="line">        title.append(<span class="string">" - "</span>).append(getName());</div><div class="line"></div><div class="line">        <span class="keyword">return</span> title;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">virtual</span> <span class="built_in">std</span>::<span class="built_in">unique_ptr</span>&lt;CListable&gt; clone() <span class="keyword">const</span> = <span class="number">0</span>;</div><div class="line">    <span class="keyword">virtual</span> <span class="built_in">std</span>::<span class="function"><span class="built_in">string</span> <span class="title">getName</span><span class="params">()</span> <span class="keyword">const</span> </span>= <span class="number">0</span>;</div><div class="line">    <span class="keyword">virtual</span> <span class="built_in">std</span>::<span class="function"><span class="built_in">string</span> <span class="title">getType</span><span class="params">()</span> <span class="keyword">const</span> </span>= <span class="number">0</span>;</div><div class="line">    <span class="keyword">virtual</span> <span class="built_in">std</span>::<span class="function"><span class="built_in">string</span> <span class="title">toString</span><span class="params">()</span> <span class="keyword">const</span> </span>= <span class="number">0</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
@@ -359,43 +211,15 @@
 <p>The class <em>CInventoryModel</em> receives commands from <em>Javascript</em> functions used in QML undoable listView, and then it performs modifications on the <em>data model</em> and the <em>listView</em> itself.<br>For example, let’s have a look at the <code>addListable</code> method:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * C++</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">void</span> CInventoryModel::addListable(<span class="keyword">int</span> listableType, <span class="keyword">const</span> QString&amp; name)</div><div class="line">&#123;</div><div class="line">    CListableFactory::<span class="keyword">listable_t</span> listableFactoryType = <span class="keyword">static_cast</span>&lt;CListableFactory::<span class="keyword">listable_t</span>&gt;(listableType);</div><div class="line">    beginInsertRows(QModelIndex(), myInventoryManager_-&gt;getInventorySize(), myInventoryManager_-&gt;getInventorySize());</div><div class="line">    myInventoryManager_-&gt;inventoryAddListable(listableFactoryType, name.toStdString());</div><div class="line">    endInsertRows();</div><div class="line">    <span class="function">emit <span class="title">modelModified</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * QML/Javascript</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">execAddListable</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> listableType = listableTypeComboBox.currentIndex + <span class="number">1</span>;</div><div class="line">	<span class="keyword">var</span> listableName = listableNameTextField.text;</div><div class="line">	inventoryModel.addListable(listableType, listableName);</div><div class="line">	inventoryList.positionViewAtEnd();</div><div class="line">&#125;</div><div class="line"></div><div class="line">...</div><div class="line">    Button &#123;</div><div class="line">        x: <span class="number">10</span></div><div class="line">        y: <span class="number">100</span></div><div class="line">        id: cmdButtonAdd</div><div class="line">        Layout.alignment: Qt.AlignLeft</div><div class="line">        anchors.topMargin: <span class="number">10</span></div><div class="line"></div><div class="line">        text: qsTr(<span class="string">"Add Item"</span>)</div><div class="line"></div><div class="line">        style: ButtonStyle &#123;</div><div class="line">            background: Rectangle &#123;</div><div class="line">                implicitWidth: <span class="number">120</span></div><div class="line">                implicitHeight: <span class="number">40</span></div><div class="line">                opacity: enabled ? <span class="number">1</span> : <span class="number">0.3</span></div><div class="line">                border.color: cmdButtonAdd.down ? selectedColor : normalColor</div><div class="line">                border.width: <span class="number">1</span></div><div class="line">                radius: <span class="number">2</span></div><div class="line">            &#125;</div><div class="line"></div><div class="line">            label: Text &#123;</div><div class="line">                text: cmdButtonAdd.text</div><div class="line">                opacity: enabled ? <span class="number">1.0</span> : <span class="number">0.3</span></div><div class="line">                color: cmdButtonAdd.down ? selectedColor : normalColor</div><div class="line">                horizontalAlignment: Text.AlignHCenter</div><div class="line">                verticalAlignment: Text.AlignVCenter</div><div class="line">                elide: Text.ElideRight</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        action: Action &#123;</div><div class="line">            enabled: <span class="literal">true</span></div><div class="line"></div><div class="line">            onTriggered: &#123;</div><div class="line">                execAddListable();</div><div class="line">                <span class="built_in">console</span>.log(<span class="string">"Add detected!"</span>)</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">...</div></pre></td></tr></table></figure>
 <p>In this way I was able to implement all of the methods to add, insert, delete items on the list, and the undo/redo actions.</p>
-
+]]></content>
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://danblog.danilocarrabino.net/2017/11/06/CMemento11/" data-id="cjarf1n0q0001nwney7al9s7f" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-DanJsonp-Class" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/05/DanJsonp-Class/" class="article-date">
-  <time datetime="2017-11-05T18:19:38.000Z" itemprop="datePublished">2017-11-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/05/DanJsonp-Class/">DanJsonp Class</a>
-    </h1>
-  
-
-      </header>
+    </entry>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://www.w3schools.com/js/js_json_jsonp.asp" target="_blank" rel="noopener">JSONP</a> is a method for sending JSON data without worrying about cross-domain issues.</p>
+    <entry>
+      <title><![CDATA[DanJsonp Class]]></title>
+      <url>/2017/11/05/DanJsonp-Class/</url>
+      <content type="html"><![CDATA[<p><a href="https://www.w3schools.com/js/js_json_jsonp.asp" target="_blank" rel="noopener">JSONP</a> is a method for sending JSON data without worrying about cross-domain issues.</p>
 <p>It does not use the XMLHttpRequest object, but the <em>script</em> tag instead.</p>
 <p>Requesting an external script from another domain does not have cross-domain policy problems.</p>
 <p><strong><a href="https://github.com/evildead/vanilla-chuck/blob/master/js/danJsonp.js" target="_blank" rel="noopener">DanJsonp</a></strong> is a pure Javascript ES6 class which implements JSONP protocol inside a web page.</p>
@@ -417,111 +241,11 @@
 <p>In order to do that, a query parameter <code>finalAddress += separator + &quot;callback=DanJsonp.danJsonpCallback&quot;;</code> is concatenated to the final uri, and the script element is appended to the document body.</p>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>Let’s consider a simple PHP/Apache server, which provides a simple API, and is running on <a href="http://localhost/php-jsonp/getJsonpData.php" target="_blank" rel="noopener">http://localhost/php-jsonp/getJsonpData.php</a>:<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$phpData = (object) [</div><div class="line">    <span class="string">'lang'</span> =&gt; <span class="string">'php'</span>,</div><div class="line">    <span class="string">'name'</span> =&gt; <span class="string">'phpJsonp'</span>,</div><div class="line">    <span class="string">'payload'</span> =&gt; <span class="string">"Let's test these data coming from the PHP/Apache server"</span></div><div class="line">];</div><div class="line"></div><div class="line">$callbackName = filter_input(INPUT_GET, <span class="string">'callback'</span>, FILTER_SANITIZE_SPECIAL_CHARS);</div><div class="line"></div><div class="line"><span class="comment">// JSONP modality</span></div><div class="line"><span class="keyword">if</span>(($callbackName !== <span class="keyword">false</span>) &amp;&amp; ($callbackName !== <span class="keyword">null</span>)) &#123;</div><div class="line">    <span class="keyword">echo</span>(<span class="string">"/**/ typeof "</span>.$callbackName.<span class="string">" === 'function' &amp;&amp; "</span>.$callbackName.<span class="string">'('</span>.json_encode($phpData).<span class="string">');'</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">// JSON modality</span></div><div class="line"><span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">echo</span>(json_encode($phpData));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>To get the simple JSON object provided by the PHP/Apache server, by using DanJsonp class, the client should simply invoke:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">DanJsonp.invokeJsonp(<span class="string">"http://localhost/php-jsonp/getJsonpData.php"</span>)</div><div class="line">    .then(<span class="function">(<span class="params">myObj</span>) =&gt;</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(myObj);</div><div class="line">    &#125;)</div><div class="line">    .catch(<span class="function">(<span class="params">reason</span>) =&gt;</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Promises catch: '</span> + reason);</div><div class="line">    &#125;);</div></pre></td></tr></table></figure></p>
-
+]]></content>
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://danblog.danilocarrabino.net/2017/11/05/DanJsonp-Class/" data-id="cjarf1n0t0002nwneloble8y6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-</section>
         
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
+    </entry>
     
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li></ul>
-    </div>
-  </div>
-
-
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/12/03/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1/">Node.js Unit Tests - Use Mocha and Chai to create a Roman Number Library Pt.1</a>
-          </li>
-        
-          <li>
-            <a href="/2017/11/08/Node-js-Passport-and-Terms-of-Use-sign-in-to-MyPortfolio/">Node.js Passport and Terms of Use: sign in to MyPortfolio</a>
-          </li>
-        
-          <li>
-            <a href="/2017/11/06/CMemento11/">CMemento11</a>
-          </li>
-        
-          <li>
-            <a href="/2017/11/05/DanJsonp-Class/">DanJsonp Class</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 Danilo Carrabino<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-<script src="/js/search.js"></script>
-<script type="text/javascript">      
-    var search_path = "search.xml";
-    if (search_path.length == 0) {
-        search_path = "search.xml";
-    }
-    var path = "/" + search_path;
-    searchFunc(path, 'local-search-input', 'local-search-result');
-</script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-  </div>
-</body>
-</html>
+</search>
