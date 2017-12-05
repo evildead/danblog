@@ -156,4 +156,6 @@ Now, let's run the test again:
 
 ## More to come
 
-In Pt.2 we will add more tests based on the requirements we defined, and the code to pass those tests.
+In [Pt.2](http://localhost:4000/2017/12/04/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-2) we will add more tests based on the requirements we defined, and the code to pass those tests.
+
+Check out the [Roman Library Repository](https://github.com/evildead/RomanNumber) if you cannot wait for the last chapter of this blog
