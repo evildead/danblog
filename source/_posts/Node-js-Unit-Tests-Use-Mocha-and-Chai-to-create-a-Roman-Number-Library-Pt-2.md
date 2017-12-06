@@ -113,3 +113,28 @@ Let's run our test
 and... All tests passed! Very good job indeed so far!
 
 ![Test for null or empty values: passed](/content/images/2017/12/04/05-Test-for-null-or-empty-values_No-Error.png)
+
+## Requirement: invalid range value
+
+The test cases for this requirement, will be integer values not in [1,3999]
+```js
+it('The constructor invoked with 0 should return an exception: invalid range', () => {
+    expect(() => RomanNumber(0)).to.throw(Error, /^invalid range$/);
+});
+
+it('The constructor invoked with 10000 should return an exception: invalid range', () => {
+    expect(() => RomanNumber(10000)).to.throw(Error, /^invalid range$/);
+});
+```
+
+Even these test cases use _Chai expect interface_ and the method _throw_.
+
+As for the previous requirement we'll skip the test part here and we'll go to add this piece of code to our library constructor:
+```js
+    if((val < 1) || (val > 3999)) {
+        throw new Error('invalid range');
+    }
+```
+As expected: all tests passed.
+![Test for not in range values: passed](/content/images/2017/12/04/06-Test-not-in-range-values_No-Error.png)
+
