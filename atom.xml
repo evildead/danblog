@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://danblog.danilocarrabino.net/"/>
-  <updated>2017-12-03T23:44:10.792Z</updated>
+  <updated>2017-12-10T23:54:45.088Z</updated>
   <id>http://danblog.danilocarrabino.net/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Node.js Unit Tests - Use Mocha and Chai to create a Roman Number Library Pt.2</title>
+    <link href="http://danblog.danilocarrabino.net/2017/12/04/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-2/"/>
+    <id>http://danblog.danilocarrabino.net/2017/12/04/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-2/</id>
+    <published>2017-12-03T23:49:00.000Z</published>
+    <updated>2017-12-10T23:54:45.088Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;In &lt;a href=&quot;http://localhost:4000/2017/12/03/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Node.js Unit Tests - Use Mocha and Chai to create a Roman Number Library Pt.1</title>
     <link href="http://danblog.danilocarrabino.net/2017/12/03/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1/"/>
     <id>http://danblog.danilocarrabino.net/2017/12/03/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1/</id>
     <published>2017-12-03T12:47:56.000Z</published>
-    <updated>2017-12-03T23:44:10.792Z</updated>
+    <updated>2017-12-04T22:28:13.854Z</updated>
     
     <summary type="html">
     

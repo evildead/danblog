@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Node.js Unit Tests - Use Mocha and Chai to create a Roman Number Library Pt.2 | Dan Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="In Pt.1 we introduced the concepts of Test-Driven Development, Unit Test, Roman number, and we listed the requirements to build our Roman Number library. The se">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js Unit Tests - Use Mocha and Chai to create a Roman Number Library Pt.2">
+<meta property="og:url" content="http://danblog.danilocarrabino.net/2017/12/04/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-2/index.html">
+<meta property="og:site_name" content="Dan Blog">
+<meta property="og:description" content="In Pt.1 we introduced the concepts of Test-Driven Development, Unit Test, Roman number, and we listed the requirements to build our Roman Number library. The second requirement: invoke library as a fu">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://danblog.danilocarrabino.net/content/images/2017/12/04/02-Test-InvokeAsFunction_Error.png">
+<meta property="og:image" content="http://danblog.danilocarrabino.net/content/images/2017/12/04/03-Test-InvokeAsFunction_No-Error.png">
+<meta property="og:image" content="http://danblog.danilocarrabino.net/content/images/2017/12/04/04-Test-toInt-Method-DoesNotExist.png">
+<meta property="og:image" content="http://danblog.danilocarrabino.net/content/images/2017/12/04/05-Test-for-null-or-empty-values_No-Error.png">
+<meta property="og:image" content="http://danblog.danilocarrabino.net/content/images/2017/12/04/06-Test-not-in-range-values_No-Error.png">
+<meta property="og:image" content="http://danblog.danilocarrabino.net/content/images/2017/12/04/07-Test-Integer-string-Error.png">
+<meta property="og:image" content="http://danblog.danilocarrabino.net/content/images/2017/12/04/08-Test-Integer-string-No-Error.png">
+<meta property="og:updated_time" content="2017-12-10T23:54:45.088Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Node.js Unit Tests - Use Mocha and Chai to create a Roman Number Library Pt.2">
+<meta name="twitter:description" content="In Pt.1 we introduced the concepts of Test-Driven Development, Unit Test, Roman number, and we listed the requirements to build our Roman Number library. The second requirement: invoke library as a fu">
+<meta name="twitter:image" content="http://danblog.danilocarrabino.net/content/images/2017/12/04/02-Test-InvokeAsFunction_Error.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Dan Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Dan Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Welcome to Danilo Carrabino&#39;s Blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://danblog.danilocarrabino.net"></form>
+        <!--
+        <div id="site_search" class="search_form">
+          <input type="text" id="local-search-input" class="search-form-input" name="q" results="0" placeholder="Search" autofocus="autofocus"/>
+          <div id="local-search-result"></div>
+        </div>
+        -->
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/04/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-2/" class="article-date">
+  <time datetime="2017-12-03T23:49:00.000Z" itemprop="datePublished">2017-12-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Node.js Unit Tests - Use Mocha and Chai to create a Roman Number Library Pt.2
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>In <a href="http://localhost:4000/2017/12/03/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1" target="_blank" rel="noopener">Pt.1</a> we introduced the concepts of <a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank" rel="noopener">Test-Driven Development</a>, <a href="https://en.wikipedia.org/wiki/Unit_testing" target="_blank" rel="noopener">Unit Test</a>, <a href="https://www.math.nmsu.edu/~pmorandi/math111f01/RomanNumerals.html" target="_blank" rel="noopener">Roman number</a>, and we listed the requirements to build our Roman Number library.</p>
+<h2 id="The-second-requirement-invoke-library-as-a-function-without-new"><a href="#The-second-requirement-invoke-library-as-a-function-without-new" class="headerlink" title="The second requirement: invoke library as a function (without new)"></a>The second requirement: invoke library as a function (without new)</h2><p>Let’s create the test for this requirement by adding this code to our testRomanNumber.js:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">it(<span class="string">'The constructor should be callable without new'</span>, () =&gt; &#123;</div><div class="line">    <span class="keyword">let</span> romanNumber = RomanNumber(<span class="number">1</span>);</div><div class="line">    assert.isObject(romanNumber);</div><div class="line">&#125;);</div><div class="line">...</div></pre></td></tr></table></figure>
+<p>If we run this new test by typing:<br><code>$ npm test</code></p>
+<p>we’ll see this error:<br><img src="/content/images/2017/12/04/02-Test-InvokeAsFunction_Error.png" alt="Test Invoke without new: error"></p>
+<p>In order to pass this test we may use the property <a href="https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Operators/new.target" target="_blank" rel="noopener"><em>new.target</em></a> added in ECMAScript 2015 (ES6)</p>
+<p>The <em>new.target</em> property lets you detect whether a function or constructor was called using the <em>new</em> operator. In constructors and functions instantiated with the <em>new</em> operator, <em>new.target</em> returns a reference to the constructor or function. In normal function calls, <em>new.target</em> is undefined.</p>
+<p>Let’s add this piece of code inside RomanNumber constructor<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(!<span class="keyword">new</span>.target) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> RomanNumber(val);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Then we run the test<br><code>$ npm test</code></p>
+<p>And, as if by magic, the error disappears:<br><img src="/content/images/2017/12/04/03-Test-InvokeAsFunction_No-Error.png" alt="Test Invoke without new: passed"></p>
+<h2 id="The-third-requirement-add-toInt-and-toString-methods"><a href="#The-third-requirement-add-toInt-and-toString-methods" class="headerlink" title="The third requirement: add toInt and toString() methods"></a>The third requirement: add toInt and toString() methods</h2><p>Add two test cases for this requirement, inside the <em>describe</em> “Check exceptions”<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">it(<span class="string">'The object should contain method toInt'</span>, () =&gt; &#123;</div><div class="line">    <span class="keyword">let</span> romanNumber = RomanNumber(<span class="number">1</span>);</div><div class="line">    assert.isFunction(romanNumber.toInt);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">it(<span class="string">'The object should contain method toString'</span>, () =&gt; &#123;</div><div class="line">    <span class="keyword">let</span> romanNumber = RomanNumber(<span class="number">1</span>);</div><div class="line">    assert.isFunction(romanNumber.toString);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>These test cases are bases on the <em>isFunction</em> method of <em>Chai assert interface</em></p>
+<p>If we run the test with:<br><code>$ npm test</code></p>
+<p>we’ll see that only the toInt() method does not exist:<br><img src="/content/images/2017/12/04/04-Test-toInt-Method-DoesNotExist.png" alt="Test presence of methods toInt and toString: error"></p>
+<p>This is because in Javascript every object has a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString" target="_blank" rel="noopener">toString()</a> method</p>
+<p>So, in order to pass the test, we just have to add this code to RomanNumber.js:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * toInt</span></div><div class="line"><span class="comment"> */</span></div><div class="line">romanNumber.prototype.toInt = <span class="function"><span class="keyword">function</span> <span class="title">toInt</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>Test the correct result by yourself, by typing:<br><code>$ npm test</code></p>
+<h2 id="Requirement-value-passed-not-null-or-empty"><a href="#Requirement-value-passed-not-null-or-empty" class="headerlink" title="Requirement: value passed not null or empty"></a>Requirement: value passed not null or empty</h2><p>We have to create three test cases to check <em>null</em> value, <em>empty</em> value, and <em>no</em> value.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">it(<span class="string">'The constructor invoked with null should return an exception: value required'</span>, () =&gt; &#123;</div><div class="line">    expect(<span class="function"><span class="params">()</span> =&gt;</span> RomanNumber(<span class="literal">null</span>)).to.throw(<span class="built_in">Error</span>, /^value required$/);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">it(<span class="string">'The constructor invoked with empty string should return an exception: value required'</span>, () =&gt; &#123;</div><div class="line">    expect(<span class="function"><span class="params">()</span> =&gt;</span> RomanNumber(<span class="string">''</span>)).to.throw(<span class="built_in">Error</span>, /^value required$/);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">it(<span class="string">'The constructor invoked with no value should return an exception: value required'</span>, () =&gt; &#123;</div><div class="line">    expect(<span class="function"><span class="params">()</span> =&gt;</span> RomanNumber()).to.throw(<span class="built_in">Error</span>, /^value required$/);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>These test cases use <em>Chai expect interface</em> and the method <em>throw</em>.</p>
+<p>In this way we can check that, given a particular value, the library constructor throws an Error with a particular message.</p>
+<p>We already know that no exception will be thrown, so let’s step forward and add the code to our library constructor:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>((<span class="keyword">typeof</span>(val) === <span class="string">'undefined'</span>) || (val === <span class="literal">null</span>) || (val === <span class="string">''</span>)) &#123;</div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'value required'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Let’s run our test<br><code>$ npm test</code></p>
+<p>and… All tests passed! Very good job indeed so far!</p>
+<p><img src="/content/images/2017/12/04/05-Test-for-null-or-empty-values_No-Error.png" alt="Test for null or empty values: passed"></p>
+<h2 id="Requirement-invalid-range-value"><a href="#Requirement-invalid-range-value" class="headerlink" title="Requirement: invalid range value"></a>Requirement: invalid range value</h2><p>The test cases for this requirement, will be integer values not in [1,3999]<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">it(<span class="string">'The constructor invoked with 0 should return an exception: invalid range'</span>, () =&gt; &#123;</div><div class="line">    expect(<span class="function"><span class="params">()</span> =&gt;</span> RomanNumber(<span class="number">0</span>)).to.throw(<span class="built_in">Error</span>, /^invalid range$/);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">it(<span class="string">'The constructor invoked with 10000 should return an exception: invalid range'</span>, () =&gt; &#123;</div><div class="line">    expect(<span class="function"><span class="params">()</span> =&gt;</span> RomanNumber(<span class="number">10000</span>)).to.throw(<span class="built_in">Error</span>, /^invalid range$/);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>Even these test cases use <em>Chai expect interface</em> and the method <em>throw</em>.</p>
+<p>As for the previous requirement we’ll skip the test part here and we’ll go to add this piece of code to our library constructor:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>((val &lt; <span class="number">1</span>) || (val &gt; <span class="number">3999</span>)) &#123;</div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'invalid range'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>As expected: all tests passed.<br><img src="/content/images/2017/12/04/06-Test-not-in-range-values_No-Error.png" alt="Test for not in range values: passed"></p>
+<h2 id="Invalid-values"><a href="#Invalid-values" class="headerlink" title="Invalid values"></a>Invalid values</h2><p>The next two tests will be about checking two types of invalid values:</p>
+<ol>
+<li>A String containing non Roman symbols: ‘error’</li>
+<li>A String containing Roman symbols and Hindu-Arabic symbols: ‘CD1X’</li>
+</ol>
+<p>For the both of these cases, our roman number library will have to throw an Error exception with message: ‘Invalid value’</p>
+<p>Here are the test cases to add to testRomanNumber.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">it(<span class="string">'The constructor invoked with "error" should return an exception: invalid value'</span>, () =&gt; &#123;</div><div class="line">    expect(<span class="function"><span class="params">()</span> =&gt;</span> RomanNumber(<span class="string">'error'</span>)).to.throw(<span class="built_in">Error</span>, /^invalid value$/);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">it(<span class="string">'The constructor invoked with "CD1X" should return an exception: invalid value'</span>, () =&gt; &#123;</div><div class="line">    expect(<span class="function"><span class="params">()</span> =&gt;</span> RomanNumber(<span class="string">'CD1X'</span>)).to.throw(<span class="built_in">Error</span>, /^invalid value$/);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>In order to pass these tests, we have to check that any string passed in input must contain only Roman symbols.</p>
+<p>To add this little improvement a minor refactor must be performed on our constructor. Replace:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>((val &lt; <span class="number">1</span>) || (val &gt; <span class="number">3999</span>)) &#123;</div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'invalid range'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>with:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="built_in">Number</span>.isInteger(val)) &#123;</div><div class="line">    <span class="keyword">if</span>((val &lt; <span class="number">1</span>) || (val &gt; <span class="number">3999</span>)) &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'invalid range'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span> <span class="keyword">if</span>((<span class="keyword">typeof</span>(val) === <span class="string">"string"</span>) || (val <span class="keyword">instanceof</span> <span class="built_in">String</span>)) &#123;</div><div class="line">    <span class="keyword">let</span> romanSymbols = [<span class="string">'M'</span>, <span class="string">'D'</span>, <span class="string">'C'</span>, <span class="string">'L'</span>, <span class="string">'X'</span>, <span class="string">'V'</span>, <span class="string">'I'</span>];</div><div class="line">    </div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; val.length; i++) &#123;</div><div class="line">        <span class="keyword">if</span>(romanSymbols.indexOf(val[i].toUpperCase()) &lt; <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'invalid value'</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'invalid value'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>If the input is a string, we make sure that any of its characters belong to our romanSymbols array.</p>
+<p>Test the correct result by yourself, by typing:<br><code>$ npm test</code></p>
+<h1 id="Allow-Hindu-Arabic-numbers-as-String"><a href="#Allow-Hindu-Arabic-numbers-as-String" class="headerlink" title="Allow Hindu-Arabic numbers as String"></a>Allow Hindu-Arabic numbers as String</h1><p>Because we want to allow anyone using our library to pass an integer as a string (i.e. ‘1473’ =&gt; 1473), we’ll add this quick test:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">it(<span class="string">'The constructor invoked with "1473" should not return an exception'</span>, () =&gt; &#123;</div><div class="line">    expect(<span class="function"><span class="params">()</span> =&gt;</span> RomanNumber(<span class="string">'1473'</span>)).to.not.throw();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>Let’s have a look at what happens if we run the test now:<br><img src="/content/images/2017/12/04/07-Test-Integer-string-Error.png" alt="Test for Integer string: error"></p>
+<p>The exception is thrown because so far we assumed that any string was supposed to be in Roman symbols only.</p>
+<p>For this reason we have must handle also this case, when a string contains Hindu-Arabic symbols (integer).</p>
+<p>We will transform the constructor in this way:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>( (<span class="built_in">Number</span>.isInteger(val)) ||</div><div class="line">    ((<span class="keyword">typeof</span>(val) === <span class="string">"string"</span> || val <span class="keyword">instanceof</span> <span class="built_in">String</span>) &amp;&amp; <span class="built_in">Number</span>.isInteger(<span class="built_in">parseInt</span>(val))) ) &#123;</div><div class="line">    </div><div class="line">    <span class="keyword">let</span> intVal = <span class="built_in">parseInt</span>(val);</div><div class="line">    <span class="keyword">if</span>((intVal &lt; <span class="number">1</span>) || (intVal &gt; <span class="number">3999</span>)) &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'invalid range'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span> <span class="keyword">if</span>((<span class="keyword">typeof</span>(val) === <span class="string">"string"</span>) || (val <span class="keyword">instanceof</span> <span class="built_in">String</span>)) &#123;</div><div class="line">    <span class="keyword">let</span> romanSymbols = [<span class="string">'M'</span>, <span class="string">'D'</span>, <span class="string">'C'</span>, <span class="string">'L'</span>, <span class="string">'X'</span>, <span class="string">'V'</span>, <span class="string">'I'</span>];</div><div class="line">    </div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; val.length; i++) &#123;</div><div class="line">        <span class="keyword">if</span>(romanSymbols.indexOf(val[i].toUpperCase()) &lt; <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'invalid value'</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'invalid value'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>In this way we can treat an integer string like an integer.</p>
+<p>Let’s run the test:<br><code>$ npm test</code></p>
+<p>All tests passed<br><img src="/content/images/2017/12/04/08-Test-Integer-string-No-Error.png" alt="Test for Integer string: error"></p>
+<h2 id="Even-more-to-come"><a href="#Even-more-to-come" class="headerlink" title="Even more to come"></a>Even more to come</h2><p>In Pt.3 we will start converting numbers (from Roman numbers to Hindu-Arabic numbers and viceversa).</p>
+<p>Check out the <a href="https://github.com/evildead/RomanNumber" target="_blank" rel="noopener">Roman Library Repository</a> if you cannot wait for the last chapter of this blog</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://danblog.danilocarrabino.net/2017/12/04/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-2/" data-id="cjb1fh0i60004icnelg707f67" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/03/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Node.js Unit Tests - Use Mocha and Chai to create a Roman Number Library Pt.1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/12/04/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-2/">Node.js Unit Tests - Use Mocha and Chai to create a Roman Number Library Pt.2</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/03/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1/">Node.js Unit Tests - Use Mocha and Chai to create a Roman Number Library Pt.1</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/08/Node-js-Passport-and-Terms-of-Use-sign-in-to-MyPortfolio/">Node.js Passport and Terms of Use: sign in to MyPortfolio</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/06/CMemento11/">CMemento11</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/05/DanJsonp-Class/">DanJsonp Class</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Danilo Carrabino<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">      
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+        search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
