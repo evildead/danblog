@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://danblog.danilocarrabino.net/content/images/2017/12/04/06-Test-not-in-range-values_No-Error.png">
 <meta property="og:image" content="http://danblog.danilocarrabino.net/content/images/2017/12/04/07-Test-Integer-string-Error.png">
 <meta property="og:image" content="http://danblog.danilocarrabino.net/content/images/2017/12/04/08-Test-Integer-string-No-Error.png">
-<meta property="og:updated_time" content="2017-12-10T23:54:45.088Z">
+<meta property="og:updated_time" content="2017-12-24T13:53:35.719Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js Unit Tests - Use Mocha and Chai to create a Roman Number Library Pt.2">
 <meta name="twitter:description" content="In Pt.1 we introduced the concepts of Test-Driven Development, Unit Test, Roman number, and we listed the requirements to build our Roman Number library. The second requirement: invoke library as a fu">
@@ -104,7 +104,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>In <a href="http://localhost:4000/2017/12/03/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1" target="_blank" rel="noopener">Pt.1</a> we introduced the concepts of <a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank" rel="noopener">Test-Driven Development</a>, <a href="https://en.wikipedia.org/wiki/Unit_testing" target="_blank" rel="noopener">Unit Test</a>, <a href="https://www.math.nmsu.edu/~pmorandi/math111f01/RomanNumerals.html" target="_blank" rel="noopener">Roman number</a>, and we listed the requirements to build our Roman Number library.</p>
+        <p>In <a href="http://danblog.danilocarrabino.net/2017/12/03/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1">Pt.1</a> we introduced the concepts of <a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank" rel="noopener">Test-Driven Development</a>, <a href="https://en.wikipedia.org/wiki/Unit_testing" target="_blank" rel="noopener">Unit Test</a>, <a href="https://www.math.nmsu.edu/~pmorandi/math111f01/RomanNumerals.html" target="_blank" rel="noopener">Roman number</a>, and we listed the requirements to build our Roman Number library.</p>
 <h2 id="The-second-requirement-invoke-library-as-a-function-without-new"><a href="#The-second-requirement-invoke-library-as-a-function-without-new" class="headerlink" title="The second requirement: invoke library as a function (without new)"></a>The second requirement: invoke library as a function (without new)</h2><p>Let’s create the test for this requirement by adding this code to our testRomanNumber.js:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">it(<span class="string">'The constructor should be callable without new'</span>, () =&gt; &#123;</div><div class="line">    <span class="keyword">let</span> romanNumber = RomanNumber(<span class="number">1</span>);</div><div class="line">    assert.isObject(romanNumber);</div><div class="line">&#125;);</div><div class="line">...</div></pre></td></tr></table></figure>
 <p>If we run this new test by typing:<br><code>$ npm test</code></p>
@@ -154,13 +154,13 @@
 <p>In this way we can treat an integer string like an integer.</p>
 <p>Let’s run the test:<br><code>$ npm test</code></p>
 <p>All tests passed<br><img src="/content/images/2017/12/04/08-Test-Integer-string-No-Error.png" alt="Test for Integer string: error"></p>
-<h2 id="Even-more-to-come"><a href="#Even-more-to-come" class="headerlink" title="Even more to come"></a>Even more to come</h2><p>In Pt.3 we will start converting numbers (from Roman numbers to Hindu-Arabic numbers and viceversa).</p>
+<h2 id="Even-more-to-come"><a href="#Even-more-to-come" class="headerlink" title="Even more to come"></a>Even more to come</h2><p>In <a href="http://danblog.danilocarrabino.net/2017/12/11/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-3">Pt.3</a> we will start converting numbers (from Hindu-Arabic to Roman numbers).</p>
 <p>Check out the <a href="https://github.com/evildead/RomanNumber" target="_blank" rel="noopener">Roman Library Repository</a> if you cannot wait for the last chapter of this blog</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://danblog.danilocarrabino.net/2017/12/04/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-2/" data-id="cjb1fh0i60004icnelg707f67" class="article-share-link">Share</a>
+      <a data-url="http://danblog.danilocarrabino.net/2017/12/04/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-2/" data-id="cjbkudmve0004uknevvbbzlrd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -168,6 +168,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2017/12/11/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Node.js Unit Tests - Use Mocha and Chai to create a Roman Number Library Pt.3
+        
+      </div>
+    </a>
   
   
     <a href="/2017/12/03/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1/" id="article-nav-older" class="article-nav-link-wrap">
@@ -209,6 +218,10 @@
       <ul>
         
           <li>
+            <a href="/2017/12/11/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-3/">Node.js Unit Tests - Use Mocha and Chai to create a Roman Number Library Pt.3</a>
+          </li>
+        
+          <li>
             <a href="/2017/12/04/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-2/">Node.js Unit Tests - Use Mocha and Chai to create a Roman Number Library Pt.2</a>
           </li>
         
@@ -222,10 +235,6 @@
         
           <li>
             <a href="/2017/11/06/CMemento11/">CMemento11</a>
-          </li>
-        
-          <li>
-            <a href="/2017/11/05/DanJsonp-Class/">DanJsonp Class</a>
           </li>
         
       </ul>
