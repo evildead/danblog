@@ -4,7 +4,7 @@ date: 2017-12-04 00:49:00
 tags:
 ---
 
-In [Pt.1](http://localhost:4000/2017/12/03/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1) we introduced the concepts of [Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development), [Unit Test](https://en.wikipedia.org/wiki/Unit_testing), [Roman number](https://www.math.nmsu.edu/~pmorandi/math111f01/RomanNumerals.html), and we listed the requirements to build our Roman Number library.
+In [Pt.1](http://danblog.danilocarrabino.net/2017/12/03/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-1) we introduced the concepts of [Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development), [Unit Test](https://en.wikipedia.org/wiki/Unit_testing), [Roman number](https://www.math.nmsu.edu/~pmorandi/math111f01/RomanNumerals.html), and we listed the requirements to build our Roman Number library.
 
 ## The second requirement: invoke library as a function (without new)
 
@@ -242,6 +242,6 @@ All tests passed
 
 ## Even more to come
 
-In Pt.3 we will start converting numbers (from Roman numbers to Hindu-Arabic numbers and viceversa).
+In [Pt.3](http://danblog.danilocarrabino.net/2017/12/11/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-3) we will start converting numbers (from Hindu-Arabic to Roman numbers).
 
 Check out the [Roman Library Repository](https://github.com/evildead/RomanNumber) if you cannot wait for the last chapter of this blog
