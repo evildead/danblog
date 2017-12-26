@@ -154,7 +154,7 @@ const romanNumber = function RomanNumber(val) {
 };
 ```
 
-As you cas see, inside the block of code executed when the value passed is a valid int, we added also the controls to convert the numbers from 1 to 5.
+As you can see, inside the block of code executed when the value passed is a valid int, we added also the controls to convert the numbers from 1 to 5.
 
 If we check now these new tests, we will have a correct result:
 ![Test 1 to 5 values conversion: passed](/content/images/2017/12/11/09-Test_FirstFiveIntValues-OK.png)
@@ -534,6 +534,6 @@ If you just relaunch the tests, you will see that any of them is correctly passe
 
 ## Even more to come (we're going to make it)
 
-In Pt.4 we will complete our library by adding conversion facility from Roman numbers to Hindu-Arabic numbers.
+In [Pt.4](http://danblog.danilocarrabino.net/2017/12/24/Node-js-Unit-Tests-Use-Mocha-and-Chai-to-create-a-Roman-Number-Library-Pt-4) we will complete our library by adding conversion facility from Roman numbers to Hindu-Arabic numbers.
 
 Check out the [Roman Library Repository](https://github.com/evildead/RomanNumber) if you cannot wait for the last chapter of this blog
